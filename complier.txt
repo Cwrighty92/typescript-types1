@@ -1,0 +1,34 @@
+How the complier works:
+
+using tsc creates a copy javascript file of the typescript file.
+
+Default behaviour complies the file regardless of errors to warn user of any potential issues
+
+in ts.config - you can define options to affect out the compier handles errors
+to do this you run tsc -init to generate the config file.
+
+focus on the complier options object - 
+
+"noEmitOnError" : true 
+
+this will prevent compliling if errors are present you can change back to false 
+for just warnings
+
+
+debugging via sourcemaps - 
+
+"sourceMap" : true (default false)
+
+debugging in the browser within the ts file - easier to find errors.
+
+
+
+Avoiding implicit "any":
+
+"noImplicitAny" : true (default false)
+
+prevents you compling without using default any types to create better code
+
+
+http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+http://www.typescriptlang.org/docs/handbook/compiler-options.html
