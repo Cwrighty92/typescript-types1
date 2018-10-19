@@ -70,3 +70,59 @@ let myMutiply: (val1: number, val2: number) => number;
 // console.log(myMutiply())
 myMutiply = multiply;
 console.log(myMutiply(2, 2))
+
+// object Types
+let userData = {
+    name: "Max",
+    age: 27
+};
+// userData = {}; will throw error as doesn't match object type
+
+// userData = {
+//     a: "hello",
+//     b: 22
+// } also won't work as the keys are also type checked
+let userData2 : { name : string, age: number} = {
+    name: "Max",
+    age: 27
+};
+
+let complex: {data:number[], output: (all: boolean) => number[]} = {
+    data: [100 ,3.99, 10],
+    output: function (all: boolean) : number[] {
+        return this.data;
+    }
+}
+
+type Complex =  {data:number[], output: (all: boolean) => number[]};
+//same type as before but set type to a variable to be used in mutiple places if required
+let complex2: Complex = {
+    data: [100, 3.99, 10],
+    output: function (all: boolean): number[]{
+        return this.data;
+    }
+}
+
+//union types
+let RealRealAge: number | string = 27;
+RealRealAge = "27";
+
+
+//check types
+
+let finalValue =30;
+if(typeof finalValue == "number"){
+    console.log("final value is a number")
+}
+
+// never type - never returns somewhere where u don't want ur code to reach
+function neverReturns ():never {
+    throw new Error('An error!');
+}
+
+//Nullable types
+// ts config - "stringNullChecks" : false/true
+let canBeNull :number | null = 12;
+canBeNull = null; //not able to change without |
+let canAlsoBeNull;
+canAlsoBeNull = null;
