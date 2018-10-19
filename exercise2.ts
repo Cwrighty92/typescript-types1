@@ -59,6 +59,9 @@ const [result1, result2, result3] = testResults;
 console.log(result1, result2, result3);
 
 // // Exercise 6 - And a well-constructed object!
-const scientist = { firstName: "Will", experience: 12 };
+const scientist: { firstName: string; experience: number } = {
+  firstName: "Will",
+  experience: 12
+};
 const { firstName, experience } = scientist;
 console.log(firstName, experience);
