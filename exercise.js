@@ -1,4 +1,10 @@
 "use strict";
+// let bankAccount = {
+//     money: 2000,
+//     deposit(value) {
+//         this.money += value;
+//     }
+// };
 var bankAccount = {
     money: 2000,
     deposit: function (value) {
